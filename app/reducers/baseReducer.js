@@ -5,8 +5,10 @@ export default function baseReducer(state, action = {}) {
 
     case actions.UPDATE_BASE:
     let baseHealth;
+    let baseLevel = state.get('level');
     if(!action.addHealth){
       baseHealth = state.get('health') + action.healthValue;
+      baseLevel++;
     }else{
       baseHealth = state.get('health') - action.healthValue;
     }
@@ -21,6 +23,7 @@ export default function baseReducer(state, action = {}) {
     }else{
       return state.withMutations(state => state
         .set('health', baseHealth))
+        .set('level', baseLevel);
     }
    
     case actions.ADD_STEP:

@@ -7,7 +7,9 @@ export function createNewTask() {
     type: actions.UPDATE_CURRENT_TASK,
     currentTaskDescription:newTask.currentTaskDescription,
     positiveOutcome:newTask.positiveOutcome.message,
-    negativeOutcome:newTask.negativeOutcome.message
+    negativeOutcome:newTask.negativeOutcome.message,
+    timeAmount:newTask.timeAmount,
+    stepsTarget:newTask.amountOfSteps
   }
 }
 

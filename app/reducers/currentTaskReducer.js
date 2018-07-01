@@ -9,7 +9,10 @@ export default function currentTaskReducer(state, action = {}) {
         .set('currentTaskDescription', action.currentTaskDescription)
         .set('positiveOutcome', action.positiveOutcome)
         .set('negativeOutcome', action.negativeOutcome)
-        .set('stepsCompleted', 0));
+        .set('stepsCompleted', 0)
+        .set('timeAmount',action.timeAmount)
+        .set('stepsTarget', action.stepsTarget)
+        );
 
     case actions.ADD_STEP:
     var steps = state.get('stepsCompleted') + action.stepsCompleted;

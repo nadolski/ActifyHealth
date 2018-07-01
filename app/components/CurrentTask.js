@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Button,Image, StatusBar, Text} from "react-native";
+import {View, Button, Image, StatusBar, Text} from "react-native";
 import {Container, Content} from "native-base";
 import colors from "../resources/colors";
 import dimens from "../resources/dimens";
@@ -7,8 +7,11 @@ import * as Progress from 'react-native-progress';
 import {connect} from 'react-redux';
 import * as CurrentTaskActions from '../actions/currentTaskActions';
 import CountDown from 'react-native-countdown-component';
+import globalStyle from '../resources/styles';
 
 export class CurrentTask extends Component {
+
+  newTask = false;
 
   constructor() {
     super();
@@ -39,8 +42,8 @@ export class CurrentTask extends Component {
         <Container style={loginStyles.containerStyle}>
           <StatusBar style={loginStyles.statusBarStyle}/>
           <Content contentContainerStyle={loginStyles.contentStyle}>
-            <Text>No Current Task</Text>
-            <Text>Adventure Awaits!</Text>
+            <Text style={globalStyle.headerText}>No Current Task</Text>
+            <Text style={{marginBottom:20,marginTop:10}}>Adventure Awaits!</Text>
             <Button
               title={'Get A New Task'}
               style={loginStyles.buttonStyle}
@@ -54,15 +57,16 @@ export class CurrentTask extends Component {
         <Container style={loginStyles.containerStyle}>
           <StatusBar style={loginStyles.statusBarStyle}/>
           <Content contentContainerStyle={loginStyles.contentStyle}>
-            <Text>Current task</Text>
+            <Text style={globalStyle.headerText} >Current task</Text>
             <Text>{this.props.currentTask.get('currentTaskDescription')}</Text>
-            <Progress.Circle formatText={()=>{ return Math.ceil((this.props.currentTask.get('stepsCompleted') / this.props.currentTask.get('stepsTarget') * 100)).toString() + '%'}}progress={0.3} showsText={true} size={200} indeterminate={false} />
-            <Text>{this.props.currentTask.get('stepsCompleted')} / {this.props.currentTask.get('stepsTarget')} steps completed</Text>
+            <Progress.Circle formatText={()=>{ return Math.ceil((this.props.currentTask.get('stepsCompleted') / this.props.currentTask.get('stepsTarget') * 100)).toString() + '%'}}progress={1} showsText={true} size={200} style={{margin:20}} indeterminate={false} />
+            <Text style={{marginBottom:20}}>{this.props.currentTask.get('stepsCompleted')} / {this.props.currentTask.get('stepsTarget')} steps completed</Text>
             <CountDown
-              until={10}
+              until={this.props.currentTask.get('timeAmount')}
               onFinish={this.failTask}
               size={20}
             />
+            <View stlye={{flexDirection: 'row'}}>
             <Button
               title={'Add Step'}
               style={loginStyles.buttonStyle}
@@ -72,10 +76,10 @@ export class CurrentTask extends Component {
             <Button
               title={'Fail Task'}
               style={loginStyles.buttonStyle}
-              timeToShow={['H', 'M', 'S']}
               onPress={this.failTask}>
               <Text style={loginStyles.buttonTextStyle}>Add Step</Text>
             </Button>
+            </View>
           </Content>
         </Container>
         );
@@ -84,7 +88,7 @@ export class CurrentTask extends Component {
   }
 
   addStep = () => {
-    this.props.dispatch(CurrentTaskActions.addStep(1))
+    this.props.dispatch(CurrentTaskActions.addStep(500))
   }
 
   createNewTask = () => {

@@ -4,6 +4,7 @@ import dimens from "../resources/dimens";
 import colors from "../resources/colors";
 import {connect} from 'react-redux';
 import * as BaseActions from '../actions/baseActions';
+import globalStyle from '../resources/styles';
 
 class DestroyBaseModal extends Component {
 
@@ -26,8 +27,8 @@ class DestroyBaseModal extends Component {
           }}>
           
           <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <Text>Well that sucks!</Text>
-            <Text>The fort couldn't handle this cruel world.</Text>
+            <Text style={globalStyle.headerErrorText}>:( Well that sucks!</Text>
+            <Text style={{marginBottom:10}}>The fort couldn't handle this cruel world.</Text>
               <Button
                   title={'Okay'}
                   style={Style.buttonStyle}

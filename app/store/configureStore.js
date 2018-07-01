@@ -28,7 +28,8 @@ const initialState = new Immutable.Map({
     stepsCompleted: 0,
     stepsTarget: 20,
     outcomeModalIsOpen: false,
-    hasFailed: false
+    hasFailed: false,
+    timeAmount:600
   })
 });
 

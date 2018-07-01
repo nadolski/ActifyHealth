@@ -1,13 +1,24 @@
 const events = [
     {
-        currentTaskDescription:"this is a test task",
-        amountOfSteps:1200,
-        timeAmount:100,
+        currentTaskDescription:"A giant bear roams outside let's build our defensives",
+        amountOfSteps:2500,
+        timeAmount:600,
         positiveOutcome:{
-            message:"You did it awesome!"
+            message:"The repairs managed to hold against the beast!"
         },
         negativeOutcome:{
-            message:"Oh dear you failed!"
+            message:"The bear just invited itself in!"
+        }
+    },
+    {
+        currentTaskDescription:"A lute player has taken up residence somewhere in the walls. He's not a good lute player. If you go for a walk maybe he will go away",
+        amountOfSteps:2500,
+        timeAmount:600,
+        positiveOutcome:{
+            message:"You arrive back and the lute player appears to be gone."
+        },
+        negativeOutcome:{
+            message:"Turns out he is also very persistent."
         }
     }
 ];

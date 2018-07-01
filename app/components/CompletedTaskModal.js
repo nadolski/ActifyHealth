@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import {Modal, Text, TouchableHighlight,Button, View} from 'react-native';
+import {Modal, Text, Image,Button, View} from 'react-native';
 import dimens from "../resources/dimens";
 import colors from "../resources/colors";
 import {connect} from 'react-redux';
 import * as BaseActions from '../actions/baseActions';
+import globalStyle from '../resources/styles';
 
 class CompletedTaskModal extends Component {
 
@@ -24,7 +25,7 @@ class CompletedTaskModal extends Component {
           }}>
           
           <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            {this.props.currentTask.get('hasFailed')? <View><Text>You Failed!</Text><Text>{this.props.currentTask.get('negativeOutcome')}</Text></View> : <View><Text>You Did It!</Text><Text>{this.props.currentTask.get('positiveOutcome')}</Text></View> }
+            {this.props.currentTask.get('hasFailed')? <View><Image source={require('./img/Loose.png')} /><Text style={globalStyle.headerErrorText}>You Failed!</Text><Text>{this.props.currentTask.get('negativeOutcome')}</Text></View> : <View><Image source={require('./img/Win.png')}/><Text style={globalStyle.headerSuccessText}>You Did It!</Text><Text>{this.props.currentTask.get('positiveOutcome')}</Text></View> }
             <Text></Text>
               <Button
                   title={'Okay'}
