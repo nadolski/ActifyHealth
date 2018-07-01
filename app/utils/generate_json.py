@@ -1,8 +1,22 @@
 #!/usr/bin/python
 
-import csv, json, sys
+import csv
+import json
+# import requests
+
+def google_to_csv():
+    print "google_to_csv", 
+    # DOC_URL = "https://docs.google.com/spreadsheets/d/1pAwG0OqzuUq-k8v3kuSwi6SctCbBZ8pG4frNKbDKwfU/edit?usp=sharing"
+    # csv_content = requests.get(DOC_URL).text
+    # print csv_content
+    with open('ActifyHealth - Sheet1.csv', 'r') as fin:
+        data = fin.read().splitlines(True)
+    with open('tasks.csv', 'w') as fout:
+        fout.writelines(data[1:])
+    print "...ok"
 
 def csv_to_json():
+    print "csv_to_json",
     outputList = []
     outcomeType = ["pos", "neg"]
     outcomeAtts = ["StatNameList", "MinValue", "MaxValue", "OutcomeDesc"]
@@ -14,7 +28,6 @@ def csv_to_json():
 
             for typ in outcomeType:
                 output[typ+"Outcome"] = {}
-                # continue
                 for att in outcomeAtts:
                     # print typ, att#, task[typ+att]
                     if att.endswith("List"):
@@ -32,8 +45,10 @@ def csv_to_json():
 
     with open('tasks.json', 'w') as f:
          json.dump(outputList, f)
+    print "...ok"
 
 def main():
+    google_to_csv()
     csv_to_json()
 
 if __name__ == '__main__':

@@ -1,1 +1,59 @@
-[{"posOutcome": {"StatNameList": ["Food", "Morale"], "OutcomeDesc": "Great stuff", "MaxValue": "10", "MinValue": "5"}, "negOutcome": {"StatNameList": ["Food", "Morale"], "OutcomeDesc": "Bad stuff", "MaxValue": "7", "MinValue": "6"}, "Description": "Walk 5 miles"}, {"posOutcome": {"StatNameList": ["Food", "Morale"], "OutcomeDesc": "Ok stuff", "MaxValue": "3", "MinValue": "1"}, "negOutcome": {"StatNameList": ["Food"], "OutcomeDesc": "A lute player has taken up residence somewhere in the walls. He's not a good lute player. You wonder how long this will last", "MaxValue": "4", "MinValue": "1"}, "Description": "Jump up and down"}, {"posOutcome": {"StatNameList": ["Food"], "OutcomeDesc": "Good stuff", "MaxValue": "7", "MinValue": "3"}, "negOutcome": {"StatNameList": ["Food", "Morale"], "OutcomeDesc": "Your castle dwellers suffer an outbreak of amoebic dysentery, you have to take some action to cure them.", "MaxValue": "4", "MinValue": "1"}, "Description": "Run a lot"}]
+[
+  {
+    "posOutcome": {
+      "StatNameList": [
+        ""
+      ],
+      "OutcomeDesc": "You retrieve the pouch, make the cement mixture and use it on your fort. Fort gains 10 hp.",
+      "MaxValue": "",
+      "MinValue": ""
+    },
+    "negOutcome": {
+      "StatNameList": [
+        ""
+      ],
+      "OutcomeDesc": "The Shmoomoo eats you and you dissolve in it's pouch. Now thats a bad way to go. Fort takes 20 damage.",
+      "MaxValue": "",
+      "MinValue": ""
+    },
+    "Description": "A Shmoomoo appears. It has a liquid pouch. Kill it, extract the pouch and mix the liquid with dirt to make cement to fortify your fort."
+  },
+  {
+    "posOutcome": {
+      "StatNameList": [
+        ""
+      ],
+      "OutcomeDesc": "You barricaded your fort just in time! This pathetic tornado is no match for your mighty fort.",
+      "MaxValue": "",
+      "MinValue": ""
+    },
+    "negOutcome": {
+      "StatNameList": [
+        ""
+      ],
+      "OutcomeDesc": "You decided watching football was better than barricading. Not a smart choice. Tornado turns your fort back into a shack.",
+      "MaxValue": "",
+      "MinValue": ""
+    },
+    "Description": "You look through your binoculars and see a raging tornado in distance. After swearing under your breath you get to the job of barricading your fort"
+  },
+  {
+    "posOutcome": {
+      "StatNameList": [
+        ""
+      ],
+      "OutcomeDesc": "You get to the cage and free the prisoner. Lucky for you the prisoner is the best god damn fort builder around. Heal fort for 10 hp.",
+      "MaxValue": "",
+      "MinValue": ""
+    },
+    "negOutcome": {
+      "StatNameList": [
+        ""
+      ],
+      "OutcomeDesc": "You failed to get to the prisoner in time. The guard also wakes up and decides to put a few bullet holes in you. Fort takes 20 damage.",
+      "MaxValue": "",
+      "MinValue": ""
+    },
+    "Description": "You hear a cry for help. From your fort you see a human in a cage. The guard is asleep. Rescue the person before the guard wakes up."
+  }
+]
