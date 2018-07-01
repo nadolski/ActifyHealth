@@ -1,0 +1,4 @@
+Description,posStatNameList,posMinValue,posMaxValue,posOutcomeDesc,negStatNameList,negMinValue,negMaxValue,negOutcomeDesc
+Walk 5 miles,"Food, Morale",5,10,Great stuff,"Food, Morale",6,7,Bad stuff
+Jump up and down,"Food, Morale",1,3,Ok stuff,Food,1,4,A lute player has taken up residence somewhere in the walls. He's not a good lute player. You wonder how long this will last
+Run a lot,Food,3,7,Good stuff,"Food, Morale",1,4,"Your castle dwellers suffer an outbreak of amoebic dysentery, you have to take some action to cure them."
