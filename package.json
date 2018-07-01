@@ -17,6 +17,7 @@
     "react-addons-shallow-compare": "15.6.0",
     "react-localization": "0.0.15",
     "react-native": "0.45.1",
+    "react-native-countdown-component": "^1.7.0",
     "react-native-popup-dialog": "0.9.29",
     "react-native-progress": "^3.5.0",
     "react-native-render-html": "2.0.0",

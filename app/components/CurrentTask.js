@@ -6,7 +6,7 @@ import dimens from "../resources/dimens";
 import * as Progress from 'react-native-progress';
 import {connect} from 'react-redux';
 import * as CurrentTaskActions from '../actions/currentTaskActions';
-
+import CountDown from 'react-native-countdown-component';
 
 export class CurrentTask extends Component {
 
@@ -58,7 +58,11 @@ export class CurrentTask extends Component {
             <Text>{this.props.currentTask.get('currentTaskDescription')}</Text>
             <Progress.Circle formatText={()=>{ return Math.ceil((this.props.currentTask.get('stepsCompleted') / this.props.currentTask.get('stepsTarget') * 100)).toString() + '%'}}progress={0.3} showsText={true} size={200} indeterminate={false} />
             <Text>{this.props.currentTask.get('stepsCompleted')} / {this.props.currentTask.get('stepsTarget')} steps completed</Text>
-           
+            <CountDown
+              until={10}
+              onFinish={this.failTask}
+              size={20}
+            />
             <Button
               title={'Add Step'}
               style={loginStyles.buttonStyle}
@@ -68,6 +72,7 @@ export class CurrentTask extends Component {
             <Button
               title={'Fail Task'}
               style={loginStyles.buttonStyle}
+              timeToShow={['H', 'M', 'S']}
               onPress={this.failTask}>
               <Text style={loginStyles.buttonTextStyle}>Add Step</Text>
             </Button>
